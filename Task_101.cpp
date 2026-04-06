@@ -12,7 +12,7 @@ bool gameisrunning = false;
 SDL_Window * window = NULL;
 SDL_Renderer* renderer = NULL;
 
-
+//did not use 
 void draw_circle_simple(SDL_Renderer* renderer, int cx, int cy, int r) {
     // go around 360 degrees
     for (int angle = 0; angle < 360; angle++) {
@@ -27,7 +27,8 @@ void draw_circle_simple(SDL_Renderer* renderer, int cx, int cy, int r) {
     }
 }
 
-void draw_filled_circle(SDL_Renderer* , int cx, int cy, int r){
+void draw_filled_circle(SDL_Renderer* renderer, int cx, int cy, int r){
+    
     for(int y = -r; y<=r;y++){
         int x = sqrt(r*r - y*y);
         SDL_RenderDrawLine(renderer,
@@ -36,6 +37,7 @@ void draw_filled_circle(SDL_Renderer* , int cx, int cy, int r){
         );
     }
 }
+
 int initialize_window(void){
     if(SDL_Init(SDL_INIT_EVERYTHING)!=0){
         return 0;
